@@ -1,0 +1,88 @@
+<script>
+
+    var person = {
+        salary: 1000,
+        getSecretSalarayInfo: function () {
+            return this.salary;
+        }
+    };
+
+    var stoleSalaryInfo = person.getSecretSalarayInfo();
+
+
+    console.log(person.getSecretSalarayInfo());
+    console.log(stoleSalaryInfo);
+    console.log("\n");
+
+    class otherperson {
+
+        name;
+        planet = "Earth";
+
+        constructor(name) {
+            this.name = name;
+        }
+
+        get name() {
+            return this.name();
+        }
+        get planet() {
+            return this.planet();
+        }
+    };
+
+    var petar = new otherperson("Petar");
+    console.log("Zdravei ", petar.name, "ot planetata ", petar.planet);
+    var ivan = new otherperson("Ivan");
+    console.log("Zdravei ", ivan.name, "ot planetata ", ivan.planet);
+    var rado = new otherperson("Rado");
+    console.log("Zdravei ", rado.name, "ot planetata ", rado.planet);
+    console.log("\n");
+
+
+
+
+    class Item {
+
+        name;
+        price = 1000;
+        discount;
+
+        constructor(discount) {
+            this.discount = discount;
+        }
+
+        get price() {
+            return this.price();
+        }
+        get discount() {
+            return this.discount();
+        }
+
+        changeprice(price, discount) {
+            this.price = price * (100 - discount) / 100;
+        }
+    }
+
+    var chair = new Item(20);
+    chair.changeprice(chair.price, chair.discount);
+    console.log(chair.price);
+
+    console.log("\n");
+
+
+
+
+
+    var _person = (function () {
+        var salary = 1000;
+
+        return {
+            getSalary: function () {
+                return salary
+            }
+        }
+    }
+    )
+    ()
+</script>
